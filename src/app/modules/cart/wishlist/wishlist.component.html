@@ -1,0 +1,14 @@
+<div class="cmp-wrap">
+    <h4>Your wishes</h4>
+
+    <div *ngIf="!products || !products.length" class="message-pane">
+        You do not have any wishes yet. Go to <a routerLink="/shop">products</a> and select what you want
+    </div>
+
+    <div class="list">
+        <div *ngFor="let product of products; index as i" class="item">
+            <app-product-card [product]="product" [inWishList]="true"
+                              (onUnwish)="removeProduct(i)"></app-product-card>
+        </div>
+    </div>
+</div>

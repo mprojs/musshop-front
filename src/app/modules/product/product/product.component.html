@@ -1,0 +1,55 @@
+<app-breadcrumb></app-breadcrumb>
+
+<div class="flex-a-center">
+    <div *ngIf="product" class="product-wrap">
+        <div class="image">
+            <img src="{{product.image.sourceUrl}}" alt="">
+        </div>
+        <div class="product-description-wrap">
+            <h3>{{product.name}}</h3>
+            <div class="d-flex">
+              <div class="product-description__rating d-flex">
+                <span>{{product.averageRating}}</span>
+                <span>
+                  <img src="assets/icons/star_full.svg" alt="star rating">
+                </span>
+              </div>
+                <span>{{product.reviewCount }}</span>
+                <span class="text_grey">Rating</span>
+                <span>{{(product.totalSales || 3) }}</span>
+                 <span class="text_grey">Sold</span>
+            </div>
+            <p>
+                <span class="crossed" *ngIf="product.regularPrice !== product.price">{{product.regularPrice}}</span>
+                <span class="price">{{product.price}}</span>
+            </p>
+            <p [innerHTML]="product.description" class="text-description"></p>
+            <div class="count">
+
+            </div>
+            <div class="available">
+                {{product.stockQuantity ? (product.stockQuantity + ' piece' + pluralize(product.stockQuantity) + ' available') : 'Out of stock'}}
+            </div>
+            <div *ngIf="inCart > 0" class="in-cart">
+                {{inCart + ' piece' + pluralize(inCart) + ' in cart'}}
+            </div>
+            <div class="buttons">
+                <ng-container *ngIf="product.stockQuantity && (product.stockQuantity - inCart > 0)">
+                    <button (click)="onAddToCartClick()"
+                            mat-raised-button color="primary">Add to Cart
+                    </button>
+                    <button (click)="onBuyNowClick()"
+                            mat-raised-button color="primary">Buy now
+                    </button>
+                </ng-container>
+                <ng-container *ngIf="!product.stockQuantity || (product.stockQuantity - inCart < 1)">
+                    <button (click)="onCheckoutClick()"
+                            mat-raised-button color="accent">Proceed to checkout
+                    </button>
+                </ng-container>
+                <button (click)="onContShoppingClick()"
+                        mat-raised-button color="primary">Continue Shopping</button>
+            </div>
+        </div>
+    </div>
+</div>

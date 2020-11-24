@@ -1,0 +1,31 @@
+<div class="page">
+  <h4>Your profile</h4>
+
+  <div *ngIf="profile" class="fields">
+    <form [formGroup]="form">
+      <div>
+        <span>Username</span>
+        <span>{{profile.username}}</span>
+      </div>
+      <div>
+        <span>Email</span>
+        <span>{{profile.email}}</span>
+      </div>
+      <div>
+        <label for="firstName">First name</label>
+        <input type="text" id="firstName" formControlName="firstName">
+      </div>
+      <div>
+        <label for="lastName">Last name</label>
+        <input type="text" id="lastName" formControlName="lastName">
+      </div>
+
+      <button mat-raised-button color="primary"
+              [disabled]="!form.valid || !form.touched"
+              (click)="updateProfileClick()">Update profile
+      </button>
+    </form>
+  </div>
+</div>
+
+

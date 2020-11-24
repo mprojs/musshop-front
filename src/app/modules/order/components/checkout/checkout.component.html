@@ -1,0 +1,120 @@
+<div class="cmp-wrap">
+    <div class="warn-demo">
+        <p>This is a demo store. You can create an order, but it will not be processed.</p>
+        <!--    <p>Это демонстационный магазин. Вы можете создать заказ, но обрабатываться он не будет.</p>-->
+    </div>
+
+    <div *ngIf="(cartProcessing$ | async) as cartProc" class="result-area">
+        <p>Processing cart... Please, wait.</p>
+    </div>
+
+    <div *ngIf="!(cartProcessing$ | async) && (result$ | async) as res" class="result-area">
+        <p>Order number {{res.orderId}} created successfully.</p>
+        <p>You can view all your orders on the <a routerLink="/orders">orders</a> page</p>
+    </div>
+
+    <div *ngIf="(!cart || !cart.items.length) && !(result$ | async)" class="result-area">
+        <p>Your cart is empty. Please, add some goods to cart before placing order.</p>
+        <button mat-raised-button color="primary" routerLink="/shop">Go shopping</button>
+    </div>
+
+    <div *ngIf="!(result$ | async) && cart.items.length">
+        <form class="form" [formGroup]="billingForm">
+            <h4 class="one-row">Billing Details</h4>
+            <div class="one-row">
+                <div>
+                    <label for="firstName">
+                        First name
+                    </label>
+                    <input id="firstName" type="text" formControlName="firstName">
+                </div>
+                <div>
+                    <label for="lastName">
+                        Last name
+                    </label>
+                    <input id="lastName" type="text" formControlName="lastName">
+                </div>
+            </div>
+            <div class="one-row">
+                <div>
+                    <label for="state">
+                        State / Country
+                    </label>
+                    <input id="state" type="text" formControlName="state">
+                </div>
+                <div>
+                    <label for="city">
+                        City / Town
+                    </label>
+                    <input id="city" type="text" formControlName="city">
+                </div>
+            </div>
+            <div class="one-row">
+                <div>
+                    <label>
+                        Street address
+                    </label>
+                    <input type="text" formControlName="streetAddress">
+                </div>
+                <div>
+                    <label for="apt">
+                        Appartment
+                    </label>
+                    <input id="apt" type="text" formControlName="apt">
+                </div>
+
+                <div>
+                    <label for="zip">
+                        Postcode / ZIP *
+                    </label>
+                    <input id="zip" type="text" formControlName="zip">
+                </div>
+
+                <div>
+                    <label for="phone">
+                        Phone *
+                    </label>
+                    <input id="phone" type="text" formControlName="phone">
+                </div>
+            </div>
+        </form>
+
+        <div class="one-row">
+            <div class="bottom-block">
+                <app-cart-total [cart]="cart"></app-cart-total>
+            </div>
+
+            <div class="bottom-block">
+                <div class="payment">
+                    <h4 class="">Payment Method</h4>
+                    <div class="form-group">
+                        <div class="">
+                            <div class="radio">
+                                <label><input type="radio" name="optradio" class="mr-2"> Direct Bank Tranfer</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="">
+                            <div class="radio">
+                                <label><input type="radio" name="optradio" class="mr-2"> Check Payment</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="">
+                            <div class="radio">
+                                <label><input type="radio" name="optradio" class="mr-2"> Paypal</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <button mat-raised-button color="primary" (click)="onCreateOrderClick()" class="place-order">Place an order
+        </button>
+    </div>
+</div>

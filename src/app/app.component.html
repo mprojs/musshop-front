@@ -1,0 +1,7 @@
+<mat-progress-bar class="progress-fixed" *ngIf="loading$ | async" mode="indeterminate"></mat-progress-bar>
+<app-header></app-header>
+<app-error-pane *ngIf="apiError" [error]="apiError" (onClose)="apiError = null"></app-error-pane>
+<!--<button (click)="toggleLoading()">Loader</button>-->
+<!--<button (click)="stopLoading()">StopLoader</button>-->
+<router-outlet></router-outlet>
+<app-footer></app-footer>

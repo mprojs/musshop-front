@@ -1,0 +1,12 @@
+<app-breadcrumb></app-breadcrumb>
+
+<div class="shop-wrap content-wrap ">
+
+    <app-filters *ngIf="(!(isMobile$ | async)) || showMobileFilters"
+                 [ngClass]="(isMobile$ | async) ? 'filters-mobile' : 'filters'"
+                 [categories$]="categories$" [mobile]="isMobile$ | async">
+    </app-filters>
+
+    <app-product-list [ngClass]="{'products-wrap' : true, 'mar-top' : isMobile$ | async}"></app-product-list>
+
+</div>

@@ -1,0 +1,13 @@
+<div class="flex-a-center">
+    <h4 *ngIf="!error.message">Loading data error!</h4>
+    <h4 *ngIf="error.message">{{error.message}}</h4>
+    <p *ngIf="!error.addlMessage">Check your internet connection or try again later</p>
+    <p *ngIf="error.addlMessage">{{error.addlMessage}}</p>
+    <div class="d-flex">
+        <button *ngIf="error.redirect" mat-raised-button color="accent"
+                (click)="onLinkClick()">{{ error.redirect.name }}</button>
+        <button mat-raised-button color="primary" (click)="onClose.emit()">
+            {{error.redirect ? 'Cancel' : 'OK'}}
+        </button>
+    </div>
+</div>

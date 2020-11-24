@@ -1,0 +1,134 @@
+@import "~src/styles/_variables.scss";
+
+.wrapper-desktop {
+  width: 100%;
+  //max-width: 200px;
+  display: flex;
+  flex-direction: column;
+}
+
+.wrapper-mobile {
+  border-top: 4px solid var(--primary-color);
+  padding: 10px;
+  height: calc(100vh - #{$headerHeight});
+  overflow: scroll;
+  & li {
+    font-size: 18px;
+  }
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+
+}
+
+.categories {
+  width: 100%;
+
+  & ul {
+    margin-bottom: 0;
+    padding: 0;
+  }
+
+  & li {
+    position: relative;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #dee2e6;;
+    list-style: none;
+    //&:not(:last-child) {
+    //  min-height: 36px;
+    //}
+    min-height: 36px;
+
+    &:last-child {
+      margin-bottom: 0;
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    a {
+      display: block;
+      color: #1a1a1a;
+
+      span {
+        position: absolute;
+        right: 0;
+        top: 7px;
+        color: #ccc;
+      }
+
+      &:hover, &:focus {
+        outline: none;
+        color: var(--primary-color);
+      }
+    }
+
+    &.active {
+      a {
+        color: var(--primary-color);
+
+        span {
+          color: var(--primary-color);
+        }
+      }
+    }
+  }
+}
+
+.price-inputs {
+  display: flex;
+  justify-content: space-between;
+  height: 35px;
+  & input {
+    width: 48%;
+  }
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.top-border {
+  border-top: 1px solid var(--primary-color);
+  margin-top: 10px;
+  padding-top: 10px;
+  width: 100%;
+}
+
+.checkboxes {
+  padding-top: 18px;
+}
+
+.buttons-row {
+  text-align: center;
+
+  & button:not(:first-child) {
+    margin-left: 10px;
+  }
+
+}
+
+.top-line {
+  display: flex;
+  justify-content: space-between;
+
+  & mat-icon {
+    font-size: 38px;
+    margin-right: 20px;
+    cursor: pointer;
+  }
+}
+
+.prod-count {
+  width: 100%;
+  margin-bottom: 5px;
+}

@@ -1,0 +1,25 @@
+<div class="content-wrap bg_color search-line">
+    <div class="flex-a-center sub-header">
+        <div *ngIf="showBreadcrumps" class="breadcrumbs">
+            <span *ngFor="let bc of breadcrumbs; index as index">
+                <a routerLink="{{bc.url}}" [queryParams]="bc.queryParams">{{bc.label}}
+                    <i *ngIf="index < breadcrumbs.length - 1">/</i>
+                </a>
+            </span>
+<!--        <span>-->
+<!--          <a href="#">Home <i>/</i></a>-->
+<!--        </span>-->
+<!--            <span>Products <i>/</i></span>-->
+        </div>
+
+        <div *ngIf="showSearch" class="search-wrap">
+            <app-search></app-search>
+        </div>
+            <mat-icon *ngIf="!showSearch" (click)="showSearchClick()" >search</mat-icon>
+<!--        <div *ngIf="!showSearch" (click)="showSearchClick()" class="search-icon-wrap">-->
+<!--        </div>-->
+        <mat-icon *ngIf="showCollapseSearch" (click)="collapseSearchClick()" class="search-icon-wrap">
+            double_arrow
+        </mat-icon>
+    </div>
+</div>

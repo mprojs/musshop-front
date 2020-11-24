@@ -1,0 +1,22 @@
+<div class="form-wrap">
+    <div *ngIf="error" class="mat-error">{{error}}</div>
+    <form [formGroup]="signupForm"
+          class="form">
+
+        <h2>Sign in</h2>
+        <p>
+            <ng-container>Already have an account?</ng-container>
+            <a routerLink="/auth/signin" [queryParams]="{returnUrl: returnUrl}">Sign in</a>
+        </p>
+        <mat-form-field>
+            <input formControlName="email" matInput placeholder="Your email" type="text">
+        </mat-form-field>
+        <mat-form-field>
+            <input formControlName="username" matInput placeholder="Your login" type="text">
+        </mat-form-field>
+        <mat-form-field>
+            <input formControlName="password" matInput placeholder="Your password" type="password">
+        </mat-form-field>
+        <button color="primary" mat-raised-button (click)="onSubmit()">Submit</button>
+    </form>
+</div>

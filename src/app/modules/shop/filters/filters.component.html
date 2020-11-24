@@ -1,0 +1,44 @@
+<div [ngClass]="mobile ? 'wrapper-mobile' : 'wrapper-desktop'">
+    <div class="categories ">
+        <div class="top-line">
+            <h3>Product Types</h3>
+            <mat-icon *ngIf="mobile" (click)="onCloseClick()">close</mat-icon>
+        </div>
+        <ul >
+            <li [ngClass]="{'active' : (activeCategoryId$ | async) === 0}">
+                <a (click)="selectProdType(0)">All</a>
+            </li>
+            <li *ngFor="let prodType of categories$ | async"
+                [ngClass]="{'active' : prodType.id === (activeCategoryId$ | async)}">
+                <a (click)="selectProdType(prodType.id)">{{prodType.name}}</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="price-range top-border">
+        <h3>Price</h3>
+        <div class="price-inputs">
+            <input #priceFrom [ngModel]="minPriceState$ | async" type="number" placeholder="From">
+            <input #priceTo [ngModel]="maxPriceState$ | async" type="number" placeholder="To">
+        </div>
+    </div>
+
+    <div class="top-border checkboxes">
+        <mat-checkbox #onlyInStock [ngModel]="onlyInStockState$ | async"
+                      (change)="onOnlyInStockChange($event)">Only In Stock
+        </mat-checkbox>
+    </div>
+
+    <div class="buttons-row top-border">
+        <div class="prod-count" *ngIf="mobile">
+            {{(foundedProductsCount$ | async) ? 'More then ' : ''}}
+            {{(foundedProductsCount$ | async) + ' items found'}}
+        </div>
+        <button mat-raised-button color="accent" *ngIf="mobile"
+                (click)="onApplyFiltersClick()" onclick="this.blur();">Show products
+        </button>
+        <button mat-raised-button color="primary"
+                (click)="onClearFilters()" onclick="this.blur();">Clear filters
+        </button>
+    </div>
+</div>

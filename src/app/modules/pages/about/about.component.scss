@@ -1,0 +1,31 @@
+.about-wrap {
+  background: #b7472a;
+  padding: 30px 0;
+}
+
+.about {
+  width: 80%;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.icon span{
+  font-size: 60px;
+  color: #fff;
+
+}
+
+.intro {
+  flex-direction: column;
+  width: 33%;
+  color: #fff;
+  padding: 10px;
+  min-width: 170px;
+}
+
+@media (max-width: 576px) {
+  .intro {
+    width: 100%;
+  }
+}

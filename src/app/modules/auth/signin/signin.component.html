@@ -1,0 +1,27 @@
+<div *ngIf="showDisclamer" class="message-pane">
+    <p>This action is only available for registered users.</p>
+    <p>Please login or register.</p>
+</div>
+
+<div class="form-wrap">
+    <div *ngIf="error" class="mat-error">{{error}}</div>
+    <form (ngSubmit)="onSubmit()" [formGroup]="loginForm"
+          class="form">
+
+        <h2>Sign in</h2>
+        <p>
+            <ng-container>Don't have account?</ng-container>
+            <a routerLink="/auth/signup" [queryParams]="{returnUrl: returnUrl}">Sign up</a>
+        </p>
+        <mat-form-field>
+            <input formControlName="username" matInput placeholder="Your login" type="text">
+        </mat-form-field>
+        <mat-form-field>
+            <input formControlName="password" matInput placeholder="Your password" type="password">
+        </mat-form-field>
+        <button color="primary" mat-raised-button type="submit">Submit</button>
+    </form>
+</div>
+<!--<button (click)="onLoginClick()">Login</button>-->
+<!--<button (click)="onLoadProfileClick()">Load profile</button>-->
+<!--<button (click)="onReloadApollo()">Reload apollo</button>-->

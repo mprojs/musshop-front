@@ -1,0 +1,18 @@
+
+<div class="list">
+  <div *ngIf="products && products.length === 0" class="message">
+    No products with such parameters were found.
+  </div>
+
+  <app-product-card *ngFor="let product of products"
+                    [product]="product" (onUnwish)="onUnwish(product)"
+                    [inWishList]="wishlistIds.includes(product.productId)"
+                    class="item">
+  </app-product-card>
+</div>
+
+<div class="pagination-block">
+  <div *ngIf="pageInfo?.hasPreviousPage" class="prev" (click)="prevClick()">Previous page</div>
+  <div *ngIf="pageInfo?.hasNextPage" class="prev" (click)="nextClick()">Next page</div>
+</div>
+

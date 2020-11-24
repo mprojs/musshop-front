@@ -1,0 +1,136 @@
+{
+  "configVersion": 1,
+  "timestamp": 1605802318354,
+  "index": "/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/10.6e6a9d3fe1d6d094193d.js",
+        "/11.adc7a27d7c128ff3b12a.js",
+        "/5.f809df313f4f2369a502.js",
+        "/6.cf320a4ad1919538428e.js",
+        "/7.a6aada92752b4c6d4f7a.js",
+        "/8.f834614b1698a19dbcd0.js",
+        "/9.95aa5f6592ddf6831656.js",
+        "/common.2585bf1de48dcdf96160.js",
+        "/favicon.ico",
+        "/index.html",
+        "/main.86174312ed0a3a4ea602.js",
+        "/manifest.webmanifest",
+        "/polyfills.4a90611c3e3f011df057.js",
+        "/runtime.c256303b25b0a446b823.js",
+        "/styles.61c2b9720a0319b58334.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/Flaticon.1f04eeab6f19803c7794.eot",
+        "/Flaticon.301ad39aed82a4bf3214.ttf",
+        "/Flaticon.a35a7fc7360d4a4cdb12.svg",
+        "/Flaticon.b1525e6d4ef3e6b36737.woff",
+        "/assets/fonts/flaticon/Flaticon.eot",
+        "/assets/fonts/flaticon/Flaticon.svg",
+        "/assets/fonts/flaticon/Flaticon.ttf",
+        "/assets/fonts/flaticon/Flaticon.woff",
+        "/assets/fonts/flaticon/Flaticon.woff2",
+        "/assets/icons/icon-128x128.png",
+        "/assets/icons/icon-144x144.png",
+        "/assets/icons/icon-152x152.png",
+        "/assets/icons/icon-192x192.png",
+        "/assets/icons/icon-384x384.png",
+        "/assets/icons/icon-512x512.png",
+        "/assets/icons/icon-72x72.png",
+        "/assets/icons/icon-96x96.png",
+        "/assets/icons/phone.svg",
+        "/assets/icons/pin.svg",
+        "/assets/icons/star.svg",
+        "/assets/icons/star_full.svg",
+        "/assets/icons/telegram.svg",
+        "/assets/icons/world.svg",
+        "/assets/images/brass.jpg",
+        "/assets/images/filters.svg",
+        "/assets/images/franki-gitar.jpg",
+        "/assets/images/search-icon.png",
+        "/assets/images/violin.jpg"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "/10.6e6a9d3fe1d6d094193d.js": "a8456373782b5cfef63b4e3e5a38708160a9f668",
+    "/11.adc7a27d7c128ff3b12a.js": "da7ed57cc439f3f5d96ee8e0595aab4ddc7ff604",
+    "/5.f809df313f4f2369a502.js": "3b14537eb7dac1486ea13bd355c415155a43aca4",
+    "/6.cf320a4ad1919538428e.js": "38e01d765d4f687fbe5dfc4af63319b919f26c92",
+    "/7.a6aada92752b4c6d4f7a.js": "c9e0367d967d2056a3301ff842beaa84e8055f0b",
+    "/8.f834614b1698a19dbcd0.js": "4959c61f58a6e020fc54583c54063a9732bd5036",
+    "/9.95aa5f6592ddf6831656.js": "18d060821c78fb19407ab6e9ad6aa28ecfd2550f",
+    "/Flaticon.1f04eeab6f19803c7794.eot": "863d4946446b4580110e6ca2ada8a7bc0d5d043d",
+    "/Flaticon.301ad39aed82a4bf3214.ttf": "72bba01f68f45bd9395851e68279cbde0bf5eb7c",
+    "/Flaticon.a35a7fc7360d4a4cdb12.svg": "d04e680da771486ec15883916b488f67b49ee0e5",
+    "/Flaticon.b1525e6d4ef3e6b36737.woff": "69d35e006e7a3a6367874cb8434e29cfbb21507e",
+    "/assets/fonts/flaticon/Flaticon.eot": "863d4946446b4580110e6ca2ada8a7bc0d5d043d",
+    "/assets/fonts/flaticon/Flaticon.svg": "d04e680da771486ec15883916b488f67b49ee0e5",
+    "/assets/fonts/flaticon/Flaticon.ttf": "72bba01f68f45bd9395851e68279cbde0bf5eb7c",
+    "/assets/fonts/flaticon/Flaticon.woff": "69d35e006e7a3a6367874cb8434e29cfbb21507e",
+    "/assets/fonts/flaticon/Flaticon.woff2": "bc57862cb77b9ac99b4fb864c16f82cb3c95128c",
+    "/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
+    "/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
+    "/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
+    "/assets/icons/icon-192x192.png": "1abd80d431a237a853ce38147d8c63752f10933b",
+    "/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
+    "/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
+    "/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
+    "/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
+    "/assets/icons/phone.svg": "b9add6e7d785bc907c9e5fc774338ca71e089b69",
+    "/assets/icons/pin.svg": "9dee4944978f91e24a5192a93619e3836b1e6ed3",
+    "/assets/icons/star.svg": "8d0ef60f551f78c3e94659aaabbb5091f516daea",
+    "/assets/icons/star_full.svg": "bafdda71806e7e8e0ed41f946b88fc85841c2500",
+    "/assets/icons/telegram.svg": "5e9d8a5299ba6225c8330a4d951421352f432551",
+    "/assets/icons/world.svg": "38493e42696968a3c71811cd1257a4c21d717d39",
+    "/assets/images/brass.jpg": "a5ab9ca3ede43888301d6372b6390ccbd0f3134f",
+    "/assets/images/filters.svg": "0a692e5a4a419e13602f463949bb4281aa868524",
+    "/assets/images/franki-gitar.jpg": "1b2eb5d724e4dcfc04a89f085b8edc5338b9d169",
+    "/assets/images/search-icon.png": "ed0c304ff7d76365d3a8a604e08778cc35c8be59",
+    "/assets/images/violin.jpg": "f3dfd48292ee0f630d328a4d96af8f7213175b70",
+    "/common.2585bf1de48dcdf96160.js": "9af14e4a80b07d46b1f15284cc9846e4836decf4",
+    "/favicon.ico": "68b2eab333c0c80963d68bc2e01f0176ffcfd275",
+    "/index.html": "d0afbf3093f254a2c652242e7b0c3340a421b2b7",
+    "/main.86174312ed0a3a4ea602.js": "abcc11128965fba1057c684a902f478f14d5cfe6",
+    "/manifest.webmanifest": "654ea66ec2a553997bfd22090098024ca7a870b1",
+    "/polyfills.4a90611c3e3f011df057.js": "57ce78cad97832ce8fec76620e3d215c8de2765e",
+    "/runtime.c256303b25b0a446b823.js": "937234e8a9c7a7c3912234750de0d655ba438892",
+    "/styles.61c2b9720a0319b58334.css": "664efa13a62fcad5899b9063edd6a1877ed67609"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ]
+}

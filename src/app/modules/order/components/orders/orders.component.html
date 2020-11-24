@@ -1,0 +1,49 @@
+<div class="content-wrap page cmp-wrap">
+    <div *ngIf="!orders || !orders.length" class="message">
+        <p>You have no orders yet</p>
+        <button mat-raised-button color="accent" routerLink="/shop">go shopping</button>
+    </div>
+
+    <div *ngIf="orders && orders.length">
+        <h4>Your orders</h4>
+        <div class="order-row orders-header">
+            <div class="o-number">Num</div>
+            <div class="o-status">
+                <div>
+                    Status
+                    <mat-icon (click)="showStatusFilter = !showStatusFilter">arrow_drop_down</mat-icon>
+                    <div *ngIf="showStatusFilter" class="status-filter"
+                         (mouseleave)="showStatusFilter = false">
+                        <mat-checkbox *ngFor="let status of statuses"
+                                      [checked]="status.checked"
+                                      (change)="onStatusFilterChange($event, status)">
+                            {{status.status}}
+                        </mat-checkbox>
+                    </div>
+                </div>
+            </div>
+            <div class="o-date">Date</div>
+            <div class="o-total">Total</div>
+            <div class="o-items">Items</div>
+            <div class="o-button">Items</div>
+        </div>
+
+        <div *ngFor="let order of getVisibleOrders()" class="order-row">
+            <ng-container *ngIf="!order.hidden">
+                <div class="o-number">{{order.orderNumber}}</div>
+                <div class="o-status">{{order.status}}</div>
+                <div class="o-date">{{order.date | date}}</div>
+                <div class="o-total">{{order.total}}</div>
+                <div class="o-items">{{buildProductNameString(order) | limitStringLength:20}}</div>
+                <div class="o-button">
+                    <mat-icon *ngIf="order.status !== 'CANCELLED'" (click)="onCancelClick(order)" color="primary"
+                              matTooltip="Cancel order">cancel
+                    </mat-icon>
+                    <mat-icon *ngIf="order.status === 'CANCELLED'" (click)="onReorderClick(order)" color="primary"
+                              matTooltip="Re-order">autorenew
+                    </mat-icon>
+                </div>
+            </ng-container>
+        </div>
+    </div>
+</div>

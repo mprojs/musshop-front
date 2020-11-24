@@ -1,0 +1,11 @@
+<div class="search">
+    <input type="text" placeholder="Search" #search>
+    <mat-icon class="search__img" aria-hidden="false"
+              (click)="onSearchClick()"
+              (keydown.enter)="onSearchClick()">search
+    </mat-icon>
+    <ul class="search-results">
+        <li *ngFor="let result of searchResults$ | async"
+            (click)="onSearchSuggestionClick(result.id)">{{result.name}}</li>
+    </ul>
+</div>

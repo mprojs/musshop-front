@@ -1,0 +1,84 @@
+<header class="header flex-a-center">
+  <div class="content-wrap flex-a-center">
+    <div class="mobile-menu-buttons" *ngIf="isMobile$ | async">
+      <div class="">
+        <mat-icon (click)="onToggleMobileMenu()" color="primary">menu</mat-icon>
+      </div>
+
+      <div *ngIf="showFiltersBtn" class="icon-settings" (click)="onToggleFilters()">
+        <img src="assets/images/filters.svg" alt="">
+      </div>
+    </div>
+
+    <a class="header__logo" routerLink="/shop">Musical <span>store</span></a>
+
+    <ul class="header__menu menu" *ngIf="!(isMobile$ | async)">
+      <li *ngFor="let link of links" class="menu__item">
+        <a *ngIf="!link.dropdown" class="menu__link" [routerLink]="link.url">{{link.name}}</a>
+        <div *ngIf="link.dropdown" class="menu__link drop-down-item"
+           (mouseenter)="onProfileEnter()" (mouseleave)="onProfileLeave()">{{link.name}}
+          <mat-icon>arrow_drop_down</mat-icon>
+          <div *ngIf="showProfileMenu" class="profile-expanded">
+            <div *ngIf="username$ | async" class="username">
+              <div>Welcome, <span class="color-primary">{{username$ | async}}</span></div>
+              <a routerLink="/auth" (click)="showProfileMenu = false">Edit profile</a>
+              <a (click)="logoutClick()">Logout</a>
+            </div>
+            <div *ngIf="!(username$ | async)" class="username">
+              <button routerLink="/auth/signin" class="signin-button"
+                      (click)="showProfileMenu = false"
+                      mat-raised-button color="primary">Signin</button>
+            </div>
+            <div class="profile-links">
+              <a *ngFor="let plink of profileLinks"
+                 routerLink="{{plink.url}}" (click)="showProfileMenu = false">{{plink.name}}</a>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+
+    <div *ngIf="showMobileMenu" class="mobile-menu">
+      <div class="mobile-menu-links">
+        <ul class="" >
+          <li *ngFor="let link of links" class="">
+            <a class="menu__link" [routerLink]="link.url" (click)="showMobileMenu = false">
+              {{link.name}}
+            </a>
+          </li>
+          <li *ngFor="let link of profileLinks" class="">
+            <a class="menu__link" [routerLink]="link.url" (click)="showMobileMenu = false">
+              {{link.name}}
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="backdrop" (click)="showMobileMenu = false">
+<!--        <mat-icon >close</mat-icon>-->
+      </div>
+    </div>
+
+    <div class="header__btn">
+      <a routerLink="/cart" class="btn-cart">
+        <span class="flaticon-shopping-bag"></span>
+        <small>{{cartItemsCount}}</small>
+      </a>
+    </div>
+
+
+<!--    <div *ngIf="showCartPreview" class="cart-preview">-->
+<!--      <div *ngFor="let item of cartItems$ | async" class="">-->
+<!--        <div class="img" style="background-image: url(  static/images/content/prod-1.jpg);"></div>-->
+<!--        <div class="text pl-3">-->
+<!--          <h4>{{item.product.name}}</h4>-->
+<!--          <p class="mb-0"><a href="#" class="price">$25.99</a><span class="quantity ml-3">Quantity: 01</span></p>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      <a class="dropdown-item text-center btn-link d-block w-100" routerLink="/cart">-->
+<!--        View All-->
+<!--        <span class="ion-ios-arrow-round-forward"></span>-->
+<!--      </a>-->
+<!--    </div>-->
+
+  </div>
+</header>

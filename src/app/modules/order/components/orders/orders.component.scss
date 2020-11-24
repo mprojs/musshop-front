@@ -1,0 +1,74 @@
+.page {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.order-row {
+  display: flex;
+  margin-bottom: 10px;
+  padding: 30px;
+  border-bottom: 4px solid #f8f9fd;
+  align-items: center;
+
+  &>div {
+    text-align: center;
+  }
+}
+
+.o-number {
+  flex: 1;
+}
+
+.o-status {
+  flex: 5;
+  display: flex;
+  justify-content: center;
+
+  & > div {
+    width: min-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    & mat-icon {
+      cursor: pointer;
+    }
+  }
+}
+
+.o-date {
+  flex: 5;
+}
+
+.o-total {
+  flex: 4;
+}
+
+.o-items {
+  flex: 8;
+}
+
+.o-button {
+  flex: 2;
+  cursor: pointer;
+}
+
+.orders-header {
+  background: var(--primary-color);
+  color: white;
+  border-radius: 4px;
+  //text-align: center;
+}
+
+.status-filter {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  z-index: 20;
+  background: white;
+  color: var(--text-primary-lighter-color);
+  border: 1px solid lightgrey;
+  padding: 10px;
+  text-align: left;
+}

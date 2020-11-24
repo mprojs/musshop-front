@@ -1,0 +1,30 @@
+<section class="contact bg-light">
+
+    <div class="wrapper">
+        <div class="text-center">
+            This is a demo site made with Angular. If you want to contact the developer please use the form below.
+        </div>
+
+        <form action="">
+            <div *ngIf="result" class="result">{{result}}</div>
+            <mat-form-field appearance="outline">
+                <mat-label>Your message</mat-label>
+                <textarea [(ngModel)]="message" name="message"
+                          matInput
+                          cdkTextareaAutosize
+                          cdkAutosizeMinRows="4"
+                          cdkAutosizeMaxRows="10"></textarea>
+            </mat-form-field>
+            <re-captcha *ngIf="prod" (resolved)="captchaResolved($event)"
+                        siteKey="6Ldlj8wZAAAAAImLCTG1Zvm5DF26Nl8L9BmCoB3t"></re-captcha>
+
+            <button mat-raised-button color="primary" (click)="onSendClick()"
+                    [disabled]="sending">
+                Send
+            </button>
+        </form>
+
+    </div>
+
+
+</section>

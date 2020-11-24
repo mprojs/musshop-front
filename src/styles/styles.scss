@@ -1,0 +1,132 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~ngx-toastr/toastr';
+//@import 'bootstrap.css';
+@import url('./flaticon.css');
+@import "~src/styles/_variables.scss";
+@import "app-theme";
+
+:root {
+
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Spectral', "Helvetica Neue", serif;
+  color: var(--text-primary-lighter-color);
+}
+
+.d-flex {
+  display: flex;
+}
+
+ul {
+  margin-top: 0;
+}
+
+h3 {
+  margin-top: 0;
+  font-weight: 500;
+  line-height: 1.2;
+  font-size: 28px;
+}
+
+.divider {
+  border-top: 1px solid lightgrey;
+  width: 90%;
+}
+
+button:focus {
+  outline: none;
+}
+
+h4 {
+  text-align: center;
+}
+
+a {
+  cursor: pointer;
+}
+
+.content-wrap {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1220px;
+  padding: 10px;
+}
+
+.flex-a-center {
+  display: flex;
+  align-items: center;
+}
+
+.cmp-wrap {
+  min-height: 80vh;
+}
+
+a {
+  color: var(--primary-color);
+  outline: none;
+  text-decoration: none !important;
+}
+
+.message-pane {
+  text-align: center;
+  max-width: 600px;
+  margin: 40px auto 10px auto;
+}
+
+.pagination-wrapper .ngx-pagination {
+  justify-content: center;
+  display: flex;
+}
+
+.pagination-wrapper .ngx-pagination a:hover {
+  background: none;
+}
+
+.pagination-wrapper .ngx-pagination .current {
+  background: var(--primary-color);
+}
+
+.pagination-wrapper .ngx-pagination li:not(.small-screen) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--primary-color);
+  border-radius: 50%;
+  width: 2em;
+  height: 2em;
+  line-height: 2em;
+  padding: 0;
+  margin: 0;
+
+  &:hover {
+    background: var(--primary-darker-color);
+  }
+}
+
+.color-primary {
+  color: var(--primary-color);
+}
+
+@media (max-width: $smallDeviceWidth) {
+  app-header {
+    display: block;
+    min-height: 68px;
+  }
+}
+
+@media screen and (max-width: 490px) {
+  .list {
+    justify-content: center;
+  }
+}

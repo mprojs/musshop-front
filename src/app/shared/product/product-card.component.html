@@ -1,0 +1,26 @@
+<div class="card-product">
+    <div class="product ">
+        <div class="img "
+             [style]="'background-image: url(' + product.image.sourceUrl + ');'">
+            <div class="desc">
+                <p class="meta-prod">
+                    <a (click)="onAddToCart()">
+                        <span class="flaticon-shopping-bag"></span></a>
+                    <a (click)="onToggleWishlist()">
+                        <span class="flaticon-heart" [style.color]="inWishList ? 'red' : ''"></span></a>
+                    <a [routerLink]="['/product']" [queryParams]="{id: product.productId}">
+                        <span class="flaticon-visibility"></span></a>
+                </p>
+            </div>
+        </div>
+
+        <div class="text ">
+            <span class="{{product.promoStatus | toClassName }}">{{product.promoStatus}}</span>
+            <span class="category">{{product.instrumentType}}</span>
+            <h2 [routerLink]="['/product']" [queryParams]="{id: product.productId}">{{product.name}}</h2>
+            <p class="mb-0"><span class="price price-sale">{{product.regularPrice}}</span> <span
+                    class="price">{{product.price}}</span></p>
+        </div>
+    </div>
+</div>
+
